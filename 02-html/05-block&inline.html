@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>block&inline | html</title>
+    <style>
+      /* 스타일을 internal로 적용 */
+      #blue {
+        background-color: aquamarine;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .powderblue {
+        background-color: powderblue;
+      }
+      .plum {
+        background-color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>html</h1>
+    <h2>block&#38;inline</h2>
+    <!-- class이름은 중복해서 사용 가능, 한 태그에 class이름 여러개를 붙일 수도 있음 -->
+    <!-- id값은 중복사용 불가, class이름,id값 동시사용은 가능
+          동시사용 시 속성값이 겹칠 때 우선순위 id>class -->
+    <!-- 보통 style은 class값으로 지정, backend단에서 id 사용 -->
+
+    <!-- block : 아래방향으로 배치됨, 기본넓이 100% -->
+    <div id="blue" class="blue">block</div>
+    <div id="yellow" class="yellow">block</div>
+    <!-- 스타일을 inline형식으로 적용 -->
+
+    <!-- inline : 옆으로 배치됨, 컨텐츠만큼만 넓이 차지함, 가로세로 사이즈 스타일 적용 안됨,적용하려면 display를 block으로 변경해야 함 -->
+    <span class="powderblue">가</span><span class="plum">나</span>
+    <br />
+    <span class="powderblue">가</span>
+    <span class="plum">나</span>
+  </body>
+</html>
