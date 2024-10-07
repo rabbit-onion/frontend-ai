@@ -1,0 +1,30 @@
+/* 스타일 */
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+  color: #222328;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* layout */
+#wrap {
+  background-color: lightblue;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  background-color: lightcoral;
+}
+
+#gnb dl {
+}
+
+#gnb dl dt {
+}

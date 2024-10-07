@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>media | html</title>
+  </head>
+  <body>
+    <h1>html</h1>
+    <h2>media</h2>
+
+    <!-- 확장자는 보통 mp4, webm(용량 더 작아 최근 많이 쓰임) 많이 씀, ogg는 사파리에서 지원 안돼서 안씀 -->
+    <!-- 상대경로 -->
+    <video src="./images/mov_bbb.mp4" controls autoplay muted loop></video>
+    <!-- controls : 재생, 볼륨 등 컨트롤 추가 -->
+    <!-- 인트로에 동영상 넣을 때 보통 controls 빼고 autoplay 넣음 -->
+    <!-- autoplay : 자동재생, chrome 브라우저 대부분 자동재생 허용x, 음소거 자동재생은 항상 허용 -->
+    <!-- muted : 음소거 -->
+    <!-- loop : 무한반복 -->
+
+    <video>
+      <!-- 절대경로 -->
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+      <!-- 상대경로 -->
+      <source src="./images/mov_bbb.webm" type="vidoe/webm" />
+    </video>
+    <!-- 대체주소가 필요한 경우 video 태그 안에 source 태그 사용, 첫번째 태그가 우선으로 사용됨 -->
+
+    <!-- audio : video태그와 사용법 대체로 같음 -->
+    <audio src="./images/horse.mp3" controls></audio>
+    <!-- controls 안 넣으면 안 보임..?원래 그런가 -->
+
+    <iframe
+      width="893"
+      height="502"
+      src="https://www.youtube.com/embed/rFjRsWPGZxY?autoplay=1&mute=1&loop=1&controls=0"
+      title="세상에서 가장 무해한 브이로그"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+    <!-- youtube영상 우클릭->소스코드 복사하면 그대로 들어옴, 저작권상 안되는경우도o -->
+    <!-- id 뒤에 ?autoplay=1&mute=1 으로 자동재생, 음소거 추가 -->
+    <!-- 속성 추가 시 & 뒤에 계속 붙이면 됨 -->
+    <!-- loop=0 한번만재생, loop=1 무한반복 -->
+    <!-- 보통 0은 부정, 1은 긍정 -->
+    <!-- 제목, 로고 등 없애려면 js 사용해서 가능 -->
+  </body>
+</html>
