@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>font | css</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+    <style>
+      /* reset */
+      html,
+      body {
+        font-size: 16px;
+        /* 크롬브라우저 기본값 : .8rem */
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>font</h2>
+
+    <!-- font-family : 글꼴 -->
+    <p class="txt1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odio aliquid fuga, unde eveniet placeat quam soluta iste voluptatem nobis laboriosam nemo ullam reprehenderit voluptate delectus repudiandae officia! Ut, beatae.
+    </p>
+    <style>
+      .txt1 {
+        font-family: 'Ubuntu', sans-serif;
+        /* 뒤에 있는 폰트는 안전폰트(지정폰트 출력 안 될 때 대신 출력) */
+        color: green;
+      }
+    </style>
+    <hr />
+
+    <!-- font-size -->
+    <!-- 절대 사이즈 : px -->
+    <p class="txt2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, minima.</p>
+    <style>
+      .txt2 {
+        font-size: 1rem;
+      }
+    </style>
+
+    <!-- 상대 사이즈 : em, rem -->
+    <!-- em : 기준이 부모요소의 폰트사이즈임(기준이 바뀔 수 있음) -->
+    <!-- rem : 기준이 html,body의 폰트사이즈(기준이 변하지 않음) -->
+    <p class="txt3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, doloribus.</p>
+    <style>
+      .txt3 {
+        font-size: 1.25em;
+        color: blueviolet;
+      }
+    </style>
+    <hr />
+
+    <ul class="list1">
+      <li>안녕하세요.</li>
+      <li><b>양파토끼</b>입니다.</li>
+      <li>너무 졸려요.</li>
+      <li>끝나고 <b>애플스토어</b> 갈거야.</li>
+    </ul>
+    <style>
+      .list1 li:first-child {
+        font-size: 16px;
+      }
+      .list1 li:nth-child(2) {
+        font-size: 0.875em;
+      }
+      .list1 li:nth-child(2) b {
+        font-size: 2em;
+      }
+      .list1 li:nth-child(3) {
+        font-size: 1.75em;
+      }
+      .list1 li:last-child {
+        font-size: 2em;
+      }
+      .list1 li:last-child b {
+        font-size: 40px;
+      }
+    </style>
+    <hr />
+
+    <!-- vw : viewport width를 기준으로 함 -->
+    <p class="txt4">안녕하세요.</p>
+    <style>
+      .txt4 {
+        font-size: 10vw;
+      }
+    </style>
+  </body>
+</html>
