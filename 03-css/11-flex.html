@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex | css</title>
+    <style>
+      .flex-container {
+        background-color: paleturquoise;
+        margin-bottom: 30px;
+        gap: 10px;
+        padding: 10px;
+      }
+      .flex-container div {
+        background-color: #f1f1f1;
+        font-size: 30px;
+        padding: 20px;
+        /* 첫번째, 마지막 마진값은 적용되지 않는 버그가 있음 */
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>flex</h2>
+
+    <div class="flex-container flex">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <style>
+      .flex {
+        display: flex;
+      }
+    </style>
+
+    <div class="flex-container direction">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <style>
+      .direction {
+        display: flex;
+        flex-direction: column;
+        /* flex-direction 기본값 : row */
+      }
+    </style>
+
+    <div class="flex-container wrap">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <style>
+      .wrap {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .wrap div {
+        width: 30%;
+      }
+    </style>
+
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </body>
+</html>

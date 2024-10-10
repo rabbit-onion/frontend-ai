@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display | css</title>
+    <style>
+      html,
+      body {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>display</h2>
+
+    <!-- width, height -->
+    <div class="box1">block</div>
+    <!-- block : width, height 기본값은 auto -->
+    <!-- width의 auto값은 100%, height의 auto값은 0 -->
+
+    <span class="box2">inline</span>
+    <!-- inline : width, height 기본값 auto -->
+    <!-- width auto, height auto값 모두 0 -->
+    <style>
+      /* mobile ver */
+      .box1 {
+        background-color: lavender;
+        height: 300px;
+        max-width: 460px;
+        margin: auto;
+      }
+      /* desktop ver */
+      @media screen and (min-width: 600px) {
+        .box1 {
+          background-color: lightpink;
+          max-width: none;
+          height: auto;
+        }
+      }
+      .box2 {
+        display: block;
+        /* width: 100%; */
+        background-color: lightblue;
+        width: 500px;
+        height: 300px;
+      }
+    </style>
+    <hr />
+
+    <!-- min width -->
+    <button>버튼</button>
+    <style>
+      button {
+        min-width: 200px;
+        background-color: bisque;
+        width: 100%;
+      }
+    </style>
+    <hr />
+
+    <!-- margin -->
+    <div class="margin"></div>
+    <style>
+      .margin {
+        width: 300px;
+        height: 300px;
+        background-color: palevioletred;
+        /* margin-top: 20px;
+        margin-left: 200px;
+        margin-bottom: 300px; */
+        margin: 20px 0 300px 200px;
+      }
+    </style>
+
+    <!-- padding -->
+    <div class="padding">padding</div>
+    <style>
+      .padding {
+        background-color: mediumslateblue;
+        padding: 100px 0;
+        text-align: center;
+      }
+    </style>
+
+    <!-- box model -->
+    <div class="model">box model</div>
+    <style>
+      .model {
+        width: 1000px;
+        height: 500px;
+        background-color: papayawhip;
+        padding: 0 30px;
+        border: 20px solid #000;
+        box-sizing: border-box;
+      }
+    </style>
+
+    <!-- display -->
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <span class="inline">inline</span>
+    <span class="inline">inline</span>
+    <style>
+      .block {
+        display: none;
+        /* display : none - html문서에 코드가 없는 것으로 여겨져 스크린 리더가 읽지 않음 */
+        background-color: plum;
+        height: 100px;
+        width: 100px;
+      }
+      .inline {
+        display: inline-block;
+        /* inline-block : 옆으로 배치되면서 가로세로값 가질 수 있음
+        enter키가 공백으로 인식되어 자주 사용되지는 않음 */
+        width: 100px;
+        height: 100px;
+        background-color: paleturquoise;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>overflow | css</title>
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>overflow</h2>
+
+    <!-- overflow : 기본값 visible -->
+    <div class="box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, in rem! Perferendis aut ipsam enim nihil cum non placeat! Ex culpa veritatis a fugiat iure repellat molestias iusto aliquid. Ut.</div>
+    <style>
+      .box1 {
+        width: 200px;
+        height: 100px;
+        background-color: lemonchiffon;
+        overflow-y: auto;
+        /* auto : 컨텐츠가 넘칠 경우 스크롤이 생기고 아니면 안생김 */
+        /* scroll : 컨텐츠가 넘치지 않아도 스크롤이 항상 있음 */
+      }
+    </style>
+  </body>
+</html>
