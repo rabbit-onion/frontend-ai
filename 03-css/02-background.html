@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>background | css</title>
+  </head>
+  <body style="height: 300vh">
+    <h1>css</h1>
+    <h2>background</h2>
+
+    <!-- background color -->
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <style>
+      .box1 {
+        height: 500px;
+        /* background-color: rgba(255, 192, 203, 0.5);
+        background-image: url('./images/kakao.png'); */
+        /* 기본값이 반복임 */
+        /* background-repeat: no-repeat; */
+        /* repeat-x, repeat-y : 해당 축으로만 반복 */
+        /* background-position: 50% 50%; */
+        /* 기본값 : 0 0 */
+        background: rgba(255, 192, 203, 0.5) url('./images/kakao.png') no-repeat 50% 50% / contain;
+      }
+      .box2 {
+        height: 500px;
+        /* background-color: rgba(203, 238, 248, 0.5); */
+        /* background-image: url('./images/bg-a.jpg'); */
+        /* 기본값이 반복임 */
+        /* background-repeat: no-repeat; */
+        /* repeat-x, repeat-y : 해당 축으로만 반복 */
+        /* background-position: 0 0; */
+        /* 기본값 : 0 0 */
+        /* background-attachment: fixed; */
+        background: rgba(203, 238, 248, 0.5) url('./images/bg-a.jpg') no-repeat 100% 0;
+        /* background-size: 100% auto; */
+        /* auto : 다른 축 크기에 맞춰 조정됨 */
+        background-size: cover;
+        /* cover : 해당 영역을 가로,세로 꽉차게 채움, 이미지 잘림 있을 수 있음 */
+        /* contain : 사진을 영역 안에서 비율을 유지하며 최대한 크게 보이게 함*/
+      }
+    </style>
+  </body>
+</html>

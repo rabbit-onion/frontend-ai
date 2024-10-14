@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position | css</title>
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>position</h2>
+
+    <!-- position : 기본값 static -->
+
+    <!-- 완벽한 센터링 -->
+    <div class="center-wrap">
+      <div class="center"></div>
+    </div>
+    <style>
+      .center-wrap {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        background-color: yellow;
+      }
+      .center {
+        position: absolute;
+        background-color: blue;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        /* top: calc(50% - 100px);
+        left: calc(50% - 100px); */
+        /* margin-top: -100px;
+        margin-left: -100px; */
+        transform: translate(-50%, -50%);
+        /* %기준은 본인 크기 기준 */
+      }
+    </style>
+    <hr />
+
+    <div class="rel">
+      <div class="sticky">게시판 타이틀</div>
+    </div>
+    <style>
+      .sticky {
+        position: sticky;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-color: skyblue;
+      }
+    </style>
+
+    <!-- absolute -->
+    <div class="rel">
+      <div class="abs"></div>
+      <div class="abs2"></div>
+    </div>
+    <header>header</header>
+    <style>
+      body {
+        height: 200vh;
+      }
+      header {
+        position: fixed;
+        /* fixed의 기준은 relative와 무관하게 무조건 body 태그임 */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-color: darkcyan;
+        z-index: 9999;
+      }
+      .rel {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        background-color: paleturquoise;
+      }
+      .abs {
+        position: absolute;
+        /* 기준이 없으면 body(root)를 기준으로 함 */
+        top: 51px;
+        left: 142px;
+        /* right: 0; */
+        /* bottom: 0; */
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        z-index: 4;
+        /* z-index : px X, 층수 단위
+        양수-앞으로, 음수-뒤쪽으로 배치 */
+      }
+      .abs2 {
+        position: absolute;
+        /* 기준이 없으면 body(root)를 기준으로 함 */
+        top: 100px;
+        left: 200px;
+        /* right: 0; */
+        /* bottom: 0; */
+        width: 200px;
+        height: 200px;
+        background-color: papayawhip;
+      }
+    </style>
+  </body>
+</html>

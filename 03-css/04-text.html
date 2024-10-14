@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>text | css</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>text</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ipsam debitis nesciunt numquam optio ut laudantium earum voluptatibus, dolorem nam sunt consectetur unde a repellendus! Temporibus ab deleniti quae corrupti!</p>
+    <style>
+      p {
+        color: lightskyblue;
+        text-align: center;
+      }
+    </style>
+    <hr />
+
+    <!-- 정렬 -->
+    <div class="box1">
+      <!-- img 태그 = inline요소 -->
+      <img src="./images/youtube.png" alt="youtube" />
+      youtube
+    </div>
+    <style>
+      .box1 img {
+        vertical-align: middle;
+        margin-top: -5px;
+      }
+    </style>
+    <hr />
+
+    <a class="link" href="#">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat tempore saepe quisquam voluptas nobis nam?</a>
+    <style>
+      .link {
+        text-decoration: none;
+        text-transform: capitalize;
+        /* uppercase,lowercase,capitalize 대,소문자, 첫글자만 대문자 */
+        letter-spacing: -0.4px;
+        line-height: 1.5;
+        white-space: nowrap;
+        /* nowrap : 텍스트가 여러줄이면 1줄로 보이게 함 */
+      }
+      .link:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <hr />
+
+    <button class="btn1">
+      <span class="blind">회원가입</span>
+    </button>
+    <style>
+      .btn1 {
+        width: 100px;
+        height: 100px;
+        background-color: lavender;
+        overflow: hidden;
+        /* 영역 밖으로 나간 컨텐츠 안보이게함 */
+      }
+      .blind {
+        display: block;
+        text-indent: -9999px;
+        /* 들여쓰기 */
+      }
+      .btn1::before {
+        display: inline-block;
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+        content: '\f2f6';
+      }
+    </style>
+  </body>
+</html>

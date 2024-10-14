@@ -1,0 +1,117 @@
+// Mixins
+
+@mixin posX {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin posY {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin posXY {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin ani-s {
+    transform: translateY(60px);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+@mixin ani-e {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+// 말줄임
+@mixin ell {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+@mixin img-g {
+    display: inline-block;
+    overflow: hidden;
+    background: url(../../images/comm.png) no-repeat;
+    background-size: 250px 170px;
+    vertical-align: top;
+    text-indent: -9999px;
+    font-size: 0;
+    line-height: 0;
+}
+
+@mixin box-line {
+    border: 1px solid $border-color;
+    border-top: 1px solid #19a0cf;
+}
+
+@mixin ico_square {
+    position: relative;
+    padding-left: 12px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 3px;
+        height: 3px;
+        background: #555;
+    }
+}
+
+@mixin ff-nanum {
+    font-family: "NanumSquare", sans-serif;
+    font-weight: 400;
+}
+@mixin ff-nanum800 {
+    font-family: "NanumSquare", sans-serif;
+    font-weight: 800;
+}
+@mixin ff-notosans {
+    font-family: "Noto Sans KR", sans-serif;
+}
+@mixin ff-jalnan {
+    font-family: "yg-jalnan", sans-serif;
+}
+@mixin ff-sang {
+    font-family: "SangSangAnt", sans-serif;
+}
+@mixin ff-verdana {
+    font-family: "Verdana", sans-serif;
+}
+
+// @mixin position(
+// 	$p: absolute,
+// 	$t: null,
+// 	$b: null,
+// 	$l: null,
+// 	$r: null) {
+// 	position: $p;
+// 	top: $t;
+// 	bottom: $b;
+// 	left: $l;
+// 	right: $r;
+// }
+
+// .absolute {
+// 	// 키워드 인수로 설정할 값만 전달
+// 	@include position($b: 10px, $r: 20px);
+// }
+
+// .fixed {
+// 	// 인수가 많아짐에 따라 가독성을 확보하기 위해 줄바꿈
+// 	@include position(fixed,
+// 		$t: 30px,
+// 		$r: 40px);
+// }

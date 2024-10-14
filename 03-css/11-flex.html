@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex | css</title>
+    <style>
+      .flex-container {
+        background-color: paleturquoise;
+        margin-bottom: 30px;
+        gap: 10px;
+        padding: 10px;
+      }
+      .flex-container div {
+        background-color: #f1f1f1;
+        font-size: 30px;
+        padding: 20px;
+        /* 첫번째, 마지막 마진값은 적용되지 않는 버그가 있음 */
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>flex</h2>
+
+    <div class="flex-container flex">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <style>
+      .flex {
+        display: flex;
+      }
+    </style>
+
+    <div class="flex-container direction">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <style>
+      .direction {
+        display: flex;
+        flex-direction: column;
+        /* flex-direction 기본값 : row */
+      }
+    </style>
+
+    <div class="flex-container wrap">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <style>
+      .wrap {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .wrap div {
+        width: 30%;
+      }
+    </style>
+
+    <div class="flex-container justify">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <style>
+      .justify {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <!-- align-item : 세로정렬 -->
+    <!-- align-items 기본값 : stretch -> item의 높이가 100%로 맞춰짐 -->
+    <div class="flex-container items">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <style>
+      .items {
+        display: flex;
+        height: 300px;
+        align-items: center;
+      }
+    </style>
+
+    <div class="flex-container content">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <style>
+      .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: stretch;
+        /* align-content : 여러 줄일 때 세로 정령, 기본값 stretch */
+        height: 500px;
+      }
+      .content div {
+        width: 30%;
+      }
+    </style>
+
+    <div class="flex-container centering">
+      <div>1</div>
+    </div>
+    <style>
+      .centering {
+        display: flex;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+
+    <!--  display : flex 자식요소 설정 -->
+    <div class="flex-container order">
+      <div style="order: 2">1</div>
+      <div style="order: 3">2</div>
+      <div style="order: 1">3</div>
+    </div>
+    <style>
+      .order {
+        display: flex;
+      }
+    </style>
+
+    <div class="flex-container grow">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <style>
+      .grow {
+        display: flex;
+      }
+      .grow div {
+        flex-grow: 1;
+        /* flex-grow : 0 = 기본값. 부모요소 크기에 맞춰 크기가 커지지 않음 */
+      }
+    </style>
+
+    <div class="flex-container grow2">
+      <div>header</div>
+      <div id="container">main</div>
+      <div>footer</div>
+    </div>
+    <style>
+      .grow2 {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
+      #container {
+        flex-grow: 1;
+      }
+    </style>
+
+    <div class="flex-container shrink">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+    <style>
+      .shrink {
+        display: flex;
+        overflow-x: auto;
+      }
+      .shrink div {
+        width: 25%;
+        flex-shrink: 0;
+        /* 기본값 1 : 축소됨, 넓이값을 입력해도 적용 안 됨 */
+      }
+    </style>
+
+    <div class="flex-container basis">
+      <div>Lorem ipsum dolor sit amet.</div>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, culpa?</div>
+      <div>Lorem, ipsum.</div>
+    </div>
+    <style>
+      .basis {
+        display: flex;
+      }
+      .basis div {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+    </style>
+
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </body>
+</html>

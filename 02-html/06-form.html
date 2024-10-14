@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form | html</title>
+  </head>
+  <body>
+    <h1>html</h1>
+    <h2>form</h2>
+
+    <!-- form : 사용자의 데이터를 받을 때 -->
+    <form action="/action_page.php">
+      <!-- fieldset : wrap 역할 -->
+      <fieldset>
+        <!-- legend : 제목/주제 -->
+        <legend>회원가입</legend>
+
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" value="김민정" readonly disabled />
+        <!-- value : 초기값 설정, 변경 가능함. 실제 데이터값 -->
+        <!-- readonly : 수정 불가능 -->
+        <!-- disabled : 비활성화, 클릭 불가능. 보통 readonly 중 하나 사용하면 됨 -->
+        <hr />
+
+        <label for="id">아이디</label>
+        <input type="text" id="id" name="id" title="아이디" placeholder="8자리 이상 특수문자 포함" maxlength="16" required autocomplete="on" />
+        <!-- label의 for, input의 id값이 같아야 한 세트로 묶임 -->
+        <!-- 보통 for, id, name값 동일하게 넣음 -->
+        <!-- input의 name값 : input의 데이터를 넘길 때 사용됨 -->
+        <!-- 웹접근성을 위해 label 사용해야 하지만 사용하지 않을 때는 title이라도 넣기, 둘 다 넣을 필요는x -->
+        <!-- placeholder : 가이드, 데이터값 아님 -->
+        <!-- maxlength : 최대값 설정  -->
+        <!-- required : 필수 입력해야하는 항목, 제출 시 빈칸이면 안 넘어가게 함 -->
+        <!-- autocolmplete : 입력값 자동완성, on/off 설정 -->
+        <hr />
+
+        <label for="pw">비밀번호</label>
+        <input type="password" id="pw" name="pw" required />
+        <hr />
+
+        <label for="email">이메일</label>
+        <input type="email" name="email" id="email" required autofocus autocomplete="off" />
+        <!-- autofocus : 커서가 해당 칸에 위치하도록 함 -->
+        <hr />
+
+        <label for="file">첨부파일</label>
+        <input type="file" name="file" id="file" />
+        <hr />
+
+        <label for="search">검색</label>
+        <input type="search" name="search" id="search" />
+        <hr />
+
+        <label for="tel">전화번호</label>
+        <input type="tel" name="tel" id="tel" value="010-1111-2222" readonly disabled />
+        <hr />
+
+        <label for="animals">좋아하는 동물</label>
+        <select name="animals" id="animals">
+          <option value="cat">cat</option>
+          <option value="dog">dog</option>
+          <option value="fish" selected>fish</option>
+        </select>
+        <hr />
+
+        <label for="text">남기고 싶은 말</label>
+        <textarea name="text" id="text" rows="10"></textarea>
+        <hr />
+
+        <button>버튼</button>
+        <!-- 여닫는 태그가 있어 이미지같은 오브젝트를 넣을 수 있음 -->
+        <input type="button" value="버튼" />
+        <!-- 단일태그라 오브젝트 넣기 어려움 -->
+        <hr />
+
+        <input type="radio" name="gender" id="m" />
+        <label for="m">남자</label>
+        <input type="radio" name="gender" id="f" />
+        <label for="f">여자</label>
+        <!-- name : 분류 그룹화 -->
+        <hr />
+
+        <input type="checkbox" name="cat" id="cat" />
+        <label for="cat">고양이</label>
+        <input type="checkbox" name="dog" id="dog" />
+        <label for="dog">강아지</label>
+        <input type="checkbox" name="fish" id="fish" />
+        <label for="fish">물고기</label>
+        <hr />
+        <input type="reset" value="취소" />
+        <input type="submit" value="회원가입" />
+      </fieldset>
+    </form>
+  </body>
+</html>

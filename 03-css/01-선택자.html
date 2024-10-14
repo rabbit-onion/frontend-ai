@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택자 | css</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+  </head>
+  <body>
+    <h1>css</h1>
+    <h2>선택자</h2>
+
+    <!-- 심플 선택자 -->
+    <h1 id="logo" class="logo just">logo</h1>
+    <style>
+      h1 {
+        color: red;
+      }
+      #logo {
+        color: blue;
+      }
+      .logo {
+        color: green;
+      }
+      h1#logo {
+        /* h1태그이면서 id가 logo인 요소 선택 */
+        /* 띄어쓰기x, 띄어쓰면 자식요소를 가리킴 */
+        /* 우선순위 높아 수정 어려우므로 권장x */
+        color: yellow;
+      }
+      #logo.logo {
+        color: pink;
+      }
+      .logo.just {
+        color: aquamarine;
+      }
+    </style>
+
+    <!-- 자손 선택 : 공백 -->
+    <div class="sel1">
+      <p class="child-g child">자식</p>
+      <p class="child-g child">자식</p>
+      <section><p class="child-g grandchild">손자</p></section>
+    </div>
+    <style>
+      /* .sel1 p { */
+      /* 공백 : 선택요소 아래의 모든 해당요소를 가진 자손 선택 */
+      /* color: red; */
+      /* } */
+      /* .sel1 > p { */
+      /* > : 선택요소 바로 아래의 자식요소만 선택 */
+      /* li의 경우 제외하고 잘 안 씀 */
+      /* color: blue; */
+      /* } */
+      /* .sel1 section p {
+        color: green;
+      } */
+
+      .sel1 .child-g {
+        color: red;
+      }
+      .sel1 .child {
+        color: blue;
+      }
+      .sel1 .grandchild {
+        color: green;
+      }
+    </style>
+    <hr />
+
+    <!-- 인접 형제 선택기(+) -->
+    <input id="term1" name="term1" type="checkbox" checked />
+    <!-- id: label의 for속성과 같은 값으로 바인딩, name:form제출 시 사용됨 -->
+    <!-- checked : 표기하지 않은 경우 체크박스 체크 시 자동으로 활성화됨 -->
+    <label for="term1" class="label">이용약관</label>
+    <br />
+    <input id="term2" name="term2" type="checkbox" />
+    <label for="term2" class="label">개인정보처리방침</label>
+    <style>
+      input:checked + .label {
+        /* input값이 checked인 경우 바로 뒤의 label요소만 선택 */
+        color: red;
+      }
+      .label::before {
+        display: inline-block;
+        content: '';
+        width: 30px;
+        height: 30px;
+        border: 1px solid gray;
+      }
+      input:checked + .label::before {
+        background-color: rgb(95, 189, 95);
+      }
+    </style>
+    <hr />
+
+    <!-- 상태 선택기(:상태값) -->
+    <a href="#" class="btn">버튼</a>
+    <style>
+      .btn {
+        display: block;
+        background-color: blue;
+        color: white;
+        width: 100px;
+        height: 50px;
+        align-content: center;
+        text-align: center;
+      }
+      .btn:hover {
+        background-color: red;
+      }
+    </style>
+    <hr />
+
+    <!-- first-child 가상 클래스 -->
+    <ul class="nav1">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
+    </ul>
+    <style>
+      .nav1 li:first-child {
+        /* li중 첫번째 요소만 선택 */
+        color: blue;
+      }
+      .nav1 li:last-child {
+        color: red;
+      }
+      .nav1 {
+        /* 요소 정렬은 부모요소의 display로 조정 */
+        display: flex;
+        list-style: none;
+        /* 목록 앞 동구라미 없애기 */
+      }
+      .nav1 li:last-child::after {
+        display: none;
+      }
+      .nav1 li::after {
+        content: '|';
+        margin: 0 10px;
+      }
+    </style>
+    <hr />
+
+    <!-- focus 클래스 (:상태) -->
+    <input id="search" name="search" class="search" type="text" placeholder="나를 클릭하세요" />
+    <label for="search"></label>
+    <style>
+      .search {
+        border: 3px solid lightgray;
+        height: 50px;
+        padding: 0 20px;
+      }
+      .search:focus {
+        border-color: navy;
+        background-color: #777;
+      }
+
+      /* ::속성값 선택 */
+      .search:focus::placeholder {
+        color: white;
+      }
+    </style>
+    <hr />
+
+    <!-- 가상 선택자 : ::before, ::after -->
+    <!-- content: ''; 빈상태라도 넣어줘야 공간이 생김
+      before,after 선택만으로는 공간이 생기지는 않음 -->
+    <ul class="list2">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
+    </ul>
+    <style>
+      .list2 {
+        list-style: none;
+      }
+      .list2::before {
+        content: 'ul 앞에 내용';
+        color: red;
+      }
+      .list2::after {
+        content: 'ul 뒤에 내용';
+        color: blue;
+      }
+      .list2 li::before {
+        display: inline-block;
+        content: '';
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+        background-color: purple;
+      }
+      .list2 li::after {
+        content: '\f1b0';
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+      }
+    </style>
+    <hr />
+
+    <ul class="list3">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+    </ul>
+    <style>
+      .list3 {
+        list-style: none;
+      }
+      .list3 li::before {
+        content: '\f105';
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+      }
+    </style>
+    <hr />
+
+    <!-- 속성 선택자 [] -->
+    <a href="#">네이버</a>
+    <a href="#" target="_blank">네이버</a>
+    <a href="#" target="_top">네이버</a>
+    <style>
+      a[target] {
+        color: #ff0000;
+      }
+      a[target='_blank'] {
+        color: #00ff00;
+      }
+    </style>
+  </body>
+</html>
