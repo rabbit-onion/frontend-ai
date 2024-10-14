@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #222328;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* 공통 스타일 */
+.blind {
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+/*  */
+
+#wrap {
+  width: 1200px;
+  margin: auto;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+#gnb {
+  display: flex;
+  gap: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#gnb::before {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 100px;
+  right: 0;
+  width: 1200px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#gnb:hover::before {
+  display: block;
+}
+
+/* #gnb dl:hover dd : 각 메뉴의 depth2만 열림 */
+/* 모든 depth2가 열림 */
+#gnb:hover dl dd {
+  display: block;
+}
+
+#gnb dl {
+  position: relative;
+  z-index: 10;
+  min-width: 110px;
+}
+
+#gnb dt a {
+  position: relative;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+#gnb dl:hover dt a {
+  color: red;
+}
+
+#gnb dl:hover dt a::after {
+  display: flex;
+}
+
+#gnb dt a::after {
+  /* display: flex; */
+  display: none;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: red;
+}
+
+#gnb dd {
+  display: none;
+  background-color: #fff;
+  padding: 5px 20px;
+}
+
+.slide {
+  overflow: hidden;
+}
+
+.slide ul {
+  display: flex;
+}
+
+.slide ul img {
+  /* img : inline요소라 요소 사이에 간격이 생김 */
+  display: block;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+  padding-top: 20px;
+}
+
+main section {
+  /* flex-basis: 0; */
+  width: 30%;
+}
+
+section .title {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.list-bbs li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.list-bbs li::before {
+  display: block;
+  content: "";
+  background-color: lightblue;
+  width: 10px;
+  height: 10px;
+}
+
+.list-bbs a {
+  display: block;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 0;
+  font-size: 18px;
+}
+
+.bnr {
+  width: 100%;
+}
+
+.list-goto {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+  row-gap: 22px;
+}
+
+.list-goto a {
+  display: flex;
+  width: 170px;
+  height: 70px;
+  background-color: #eee;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+footer {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+  padding: 0 20px;
+}
+
+footer .logo {
+  font-size: 20px;
+}
+
+footer address {
+  font-style: normal;
+}
+
+.sns a {
+  display: inline-block;
+  padding: 20px 5px;
+}
+
+#modal {
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  /* fixed는 기준이 항상 body이므로 relative필요없음 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+  height: 500px;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#modal .tit {
+  text-align: center;
+}
+/* #modal .cont {
+  flex-grow: 1;
+} */
+
+#modal button {
+  display: block;
+  margin: auto auto 0 auto;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+}

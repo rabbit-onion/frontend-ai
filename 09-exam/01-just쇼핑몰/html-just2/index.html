@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 반응형 작업을 위한 태그 -->
+    <title>just 쇼핑몰</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- 컨텐츠 영역 전체를 감싸는 div -->
+    <div id="wrap">
+      <header>
+        <h1><a href="#">just 쇼핑몰</a></h1>
+        <nav id="gnb">
+          <!-- 1depth일 때는 ul로 구성하는 게 편함 -->
+          <!-- 2depth : dt에 depth1, dd에 depth2 -->
+          <dl>
+            <dt><a href="#">menu1</a></dt>
+            <dd><a href="#">menu1-1</a></dd>
+            <dd><a href="#">menu1-2</a></dd>
+            <dd><a href="#">menu1-3</a></dd>
+            <dd><a href="#">menu1-4</a></dd>
+          </dl>
+          <dl>
+            <dt><a href="#">menu2</a></dt>
+            <dd><a href="#">menu2-1</a></dd>
+            <dd><a href="#">menu2-2</a></dd>
+            <dd><a href="#">menu2-3</a></dd>
+            <dd><a href="#">menu2-4</a></dd>
+          </dl>
+          <dl>
+            <dt><a href="#">menu3</a></dt>
+            <dd><a href="#">menu3-1</a></dd>
+            <dd><a href="#">menu3-2</a></dd>
+            <dd><a href="#">menu3-3</a></dd>
+            <dd><a href="#">menu3-4</a></dd>
+          </dl>
+          <dl>
+            <dt><a href="#">menu4</a></dt>
+            <dd><a href="#">menu4-1</a></dd>
+            <dd><a href="#">menu4-2</a></dd>
+            <dd><a href="#">menu4-3</a></dd>
+            <dd><a href="#">menu4-4</a></dd>
+          </dl>
+        </nav>
+      </header>
+      <div class="slide">
+        <ul>
+          <li>
+            <a href="#"><img src="./images/slide1.png" alt="핏을 잡아주는 stretch 계절마다 함께하기 좋은 붓컷데님 must have denim" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./images/slide2.png" alt="fashion week buy 3 get 15% off" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./images/slide3.jpg" alt="핏을 잡아주는 stretch 계절마다 함께하기 좋은 붓컷데님 must have denim" /></a>
+          </li>
+        </ul>
+      </div>
+      <main>
+        <section>
+          <!-- section에는 주제(h태그)가 꼭 있어야함 -->
+          <h2 class="title">공지사항</h2>
+          <div class="cont">
+            <ul class="list-bbs">
+              <li><a href="#">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</a></li>
+              <li><a href="#">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</a></li>
+              <li><a href="#">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</a></li>
+              <li><a href="#">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</a></li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <h2 class="blind">홍보 배너</h2>
+          <div class="cont">
+            <a href="#"><img src="./images/bnr.jpg" alt="검색어를 입력해주세요" class="bnr" /></a>
+          </div>
+        </section>
+        <section>
+          <h2 class="blind">바로가기</h2>
+          <div class="cont">
+            <ul class="list-goto">
+              <li><a href="#">goto1</a></li>
+              <li><a href="#">goto2</a></li>
+              <li><a href="#">goto3</a></li>
+              <li><a href="#">goto4</a></li>
+            </ul>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="logo">just 쇼핑몰</div>
+        <address>copyright</address>
+        <div class="sns">
+          <!-- 보통 이런 형식은 ul 많이 쓰는데 footer에서는 잘 안쓰곤함(왜인지모름) -->
+          <a href="#">facebook</a>
+          <a href="#">youtube</a>
+          <a href="#">blog</a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- 모달 : 모든 내용 위에 나타나야 하고 viewport 100%만큼 dimmed 시켜야되므로 wrap 아래에 위치 -->
+    <div id="modal" class="dimmed">
+      <div class="modal-container">
+        <h2 class="tit">모달 제목</h2>
+        <div class="cont">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque veritatis quis cupiditate corporis ad recusandae aut molestiae error atque. Odio veritatis veniam alias eos laborum voluptate quod, odit quia iste.</div>
+        <button class="btn-close">모달창 닫기</button>
+      </div>
+    </div>
+  </body>
+</html>
