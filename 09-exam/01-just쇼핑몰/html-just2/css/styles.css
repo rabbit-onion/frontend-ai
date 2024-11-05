@@ -98,11 +98,35 @@ header {
 }
 
 .slide {
+  position: relative;
+  height: 300px;
   overflow: hidden;
 }
 
 .slide ul {
   display: flex;
+  position: absolute;
+  animation: slide 10s infinite alternate;
+}
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  30% {
+    left: 0;
+  }
+  35% {
+    left: -100%;
+  }
+  65% {
+    left: -100%;
+  }
+  70% {
+    left: -200%;
+  }
+  100% {
+    left: -200%;
+  }
 }
 
 .slide ul img {

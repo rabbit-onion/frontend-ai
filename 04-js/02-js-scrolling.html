@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js-scrolling | js</title>
+  </head>
+  <body>
+    <div class="item" style="background-color: lightpink">아이템</div>
+
+    <style>
+      body {
+        /* position: relative; */
+        /* body는 relative 안 넣어도 되어있음 */
+        height: 200vh;
+        overflow-x: hidden;
+      }
+      .item {
+        position: absolute;
+        top: 200px;
+        left: 10px;
+        /* transform: translateX(-50%); */
+        width: 300px;
+        height: 300px;
+        background-color: lightgreen;
+        /* transition: all 1s; */
+      }
+    </style>
+
+    <script>
+      // const item = document.querySelector(".item");
+
+      // .item 의 배경색을 lightpink로 변경
+      // item.style.backgroundColor = "lightblue";
+      // item.style.fontSize = "3rem";
+
+      // x,y축으로 100px씩 이동
+      // scale 1.5배
+      // rotate 45도
+      // item.style.transform = "translate(100px, 100px) scale(1.5) rotate(45deg)";
+
+      // 스크롤 이벤트
+      // 윈도우(창)를 스크롤 했을 때
+      // window.addEventListener(이벤트, 함수);
+      window.addEventListener("scroll", function () {
+        const scrolled = window.scrollY;
+
+        console.log("scroll");
+        console.log("스크롤 값 " + scrolled + "px");
+        // 옛날방식
+        console.log(`스크롤 값 : ${scrolled}px`);
+        // 백틱 기호 사용 -ES6 버전
+
+        // .item 요소의 background-color를 lightblue로 변경
+        const item = document.querySelector(".item");
+
+        item.style.backgroundColor = `lightblue`;
+
+        // 스크롤 시 .item요소의 left값을 100px로 변경
+        item.style.left = `${scrolled}px`;
+        item.style.top = `${scrolled + 200}px`;
+        item.style.transform = `scale(${scrolled * 0.01}) rotate(${scrolled * 0.5}deg)`;
+      });
+    </script>
+  </body>
+</html>

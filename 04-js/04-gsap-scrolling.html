@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gsap-scrolling | js</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <div class="space">gsap</div>
+    <section class="section2">
+      <div class="box"></div>
+    </section>
+    <section class="section" style="height: 100vh">
+      <div class="box2"></div>
+    </section>
+    <div class="space">gsap</div>
+
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        margin-top: 100px;
+        background-color: lightcoral;
+      }
+      .space {
+        height: 100vh;
+      }
+      .section {
+        background-color: lavender;
+      }
+      .box2 {
+        width: 200px;
+        height: 200px;
+        /* margin-top: 100px; */
+        border-radius: 50%;
+        background-color: lightblue;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to(".box2", {
+        x: 400,
+        y: 400,
+        backgroundColor: "blue",
+        duration: 2,
+        scrollTrigger: {
+          trigger: ".section", // 객체 기준 범위
+          start: "10% 30%", // 시작 위치
+          end: "80% 60%", // 끝 위치
+          scrub: true, // 스크롤 속도에 따라 애니메이션 속도 조절
+          markers: true, // 개발 가이드선
+        },
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".section2", // 객체 기준 범위
+          start: "10% 30%", // 시작 위치
+          end: "80% 60%", // 끝 위치
+          scrub: true, // 스크롤 속도에 따라 애니메이션 속도 조절
+          markers: true, // 개발 가이드선
+        },
+      });
+
+      tl.to(".box", {
+        x: 200,
+        duration: 2,
+      })
+        .to(".box", {
+          y: 200,
+          duration: 2,
+        })
+        .to(".box", {
+          rotation: 45,
+          scale: 2,
+        });
+    </script>
+  </body>
+</html>
