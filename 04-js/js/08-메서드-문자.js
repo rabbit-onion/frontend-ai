@@ -172,3 +172,65 @@ const list = ["list1", "list2", "list3"];
 arr.forEach((item) => {
   console.log(item);
 });
+
+// =================================================================
+// arr.includes(element, start) : 배열에 해당 내용이 있는지 확인
+const animals = ["Cat", "Lion", "Fox"];
+console.log(animals.includes("Lion")); // true
+console.log(animals.includes("lion")); // false
+console.log(animals.includes("dolphin")); // false
+
+// 소문자로 변환 후 비교
+// .toLowerCase
+
+// array.join(separator) : 배열 인덱스 사이사이에 separator를 넣음
+console.log(animals.join(" and "));
+
+// ==============================================================
+// JavaScript에서의 map() 사용
+// array.map(function(currentValue, index, arr), thisValue)
+const users2 = [
+  { name: "홍길동", age: 36 },
+  { name: "고길동", age: 12 },
+  { name: "둘리", age: 6 },
+];
+
+users2.map(function (item) {
+  console.log(item);
+});
+
+const newUsers = users2.map((item) => ({ ...item, email: null }));
+console.log(newUsers);
+
+// ===============================================================
+// arr.pop(); : 배열의 맨 마지막 아이템을 제거하고 마지막 아이템만 반환
+console.log(arr.pop()); // 3 [1, 2]
+
+// array.push(item1, item2, ..., itemX)
+// item을 추가하고 추가한 후의 배열의 길이 반환
+console.log(arr.push(4, 5, 6)); // 5
+console.log(arr); // [1, 2, 4, 5, 6]
+
+// ===========================================================
+const users4 = [
+  { name: "홍길동", age: 36 },
+  { name: "고길동", age: 12 },
+  { name: "둘리", age: 6 },
+];
+// 총 나이 합계 (reduce)
+// array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+const totalAge = users4.reduce(function (total, currentValue) {
+  return total + currentValue.age;
+}, 0);
+
+console.log(totalAge);
+
+// 평균 나이 구하기
+const ave = (totalAge / users4.length).toFixed();
+// toFixed 기본값은 0 (소수점 없이 정수로 반환)
+console.log(ave);
+
+// arr.slice(startIndex, endIndex)
+// start ~ end 전의 인덱스까지 (end는 포함 안됨!!)
+const arr2 = [1, 2, 3, 4, 5];
+console.log(arr2.slice(0, end));

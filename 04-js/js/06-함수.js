@@ -104,3 +104,96 @@ const f = () => ({ name: "윈터" });
 // return {객체} 일 때 return, 중괄호 생략 가능하나 소괄호로 감싸야 함
 const g = () => [1, 2, 3];
 // return [배열] 도 return, 중괄호 생략 가능
+
+// ================================================================
+
+// 3초 후에 콘솔창
+// setTimeout(function, milliseconds, param1, param2, ...)
+const timeOut = setTimeout(() => {
+  console.log("3초 뒤에 실행됩니다.");
+}, 3000);
+
+// ----------------------------------------------
+// clearTimeout을 사용해 setTimeout을 취소
+// clearTimeout(id_of_settimeout)
+
+// btn1을 클릭했을 때
+const btn1 = document.querySelector(".btn1");
+btn1.addEventListener("click", () => {
+  // clearTimeout을 사용해 setTimeout을 취소하고
+  clearTimeout(timeOut);
+  // console창에 setTiemout이 취소되었습니다 출력
+  console.log("setTimeout이 취소되었습니다.");
+});
+
+// setInterval : 지정 시간마다 반복
+// setInterval(function(){}, milliseconds, param1, param2, ...)
+const interval = setInterval(() => {
+  console.log("setInterval : 3초마다 실행됩니다.");
+}, 3000);
+
+// btn2 클릭 시 setInterval 중단하기
+// 중단 코드 없으면 무한반복 . . .
+// btn2를 클릭했을 때
+const btn2 = document.querySelector(".btn2");
+btn2.addEventListener("click", function () {
+  // clearTimeout을 사용해 setInterval을 취소하고
+  clearInterval(interval);
+  // console창에 setInterval이 취소되었습니다 출력
+  console.log("setInterval이 취소되었습니다.");
+});
+
+// =================================================
+
+// 콜백 함수
+// 원하는 시점에 호출되도록 설정할 수 있는 함수
+const aa = (callback) => {
+  // b함수를 실행
+  callback();
+  console.log("aa");
+};
+
+const bb = () => {
+  console.log("bb");
+};
+
+// aa();
+// bb();
+// 코드가 작성된 순서대로 출력됨 (동기)
+
+aa(bb);
+// b를 먼저 출력 (비동기)
+
+// =======================================================
+
+// this
+// 일반 함수: 호출 위치에서 this가 결정된다.
+// 화살표 함수: 자신이 선언된 함수 범위에서 this가 결정됨(함수 안에 화살표 함수가 존재해야 함)
+
+function userss() {
+  this.firstName = "윈터";
+  this.lastName = "김";
+
+  return {
+    // 화살표 함수는 함수 안에 포함되지 않으면 this = undefined
+    getFullName: () => {
+      return `${this.lastName}${this.firstName}`;
+    },
+  };
+}
+
+const user2 = userss();
+console.log(user2.getFullName());
+
+const obj = {
+  firstName: "윈터",
+  lastName: "김",
+  // getFullName() {
+  //   return `${this.lastName}${this.firstName}`;
+  // },
+  getFullName: () => {
+    return `${this.lastName}${this.firstName}`;
+  },
+};
+
+console.log(obj.getFullName());
