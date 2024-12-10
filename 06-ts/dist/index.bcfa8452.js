@@ -651,6 +651,72 @@ const user2 = {
     name: "jeong",
     age: 10
 };
+// ================================================
+// 객체 타입
+const a = {
+    name: "kim",
+    age: 20
+};
+const b = {
+    name: "jeong",
+    age: 17
+};
+const aa = {
+    name: "kim",
+    age: 20
+};
+const bb = {
+    name: "jeong",
+    age: 17
+};
+// =========================================================
+// 배열 타입
+const arr1 = [
+    1,
+    2,
+    3
+];
+const arr2 = [
+    "\uAC00",
+    "\uB098",
+    "\uB2E4"
+];
+const arr3 = [
+    1,
+    "\uAC00",
+    true
+];
+const user = [
+    {
+        name: "\uAE40\uAC00\uC744",
+        age: 2
+    },
+    {
+        name: "\uAE40\uACA8\uC6B8",
+        age: 3
+    }
+];
+// ? 표시된 값은 사용하지 않아도 에러 x,
+// ? 표시 없이 해당 값이 사용되지 않으면 오류 남
+const user3 = {
+    name: "\uCF54\uCF54",
+    // age: 6,
+    address: {
+        city: "Incheon",
+        dong: "Dong-gu"
+    }
+};
+// ===========================================================
+// 일반 함수
+function sum(a, b) {
+    return a + b;
+}
+console.log(sum(1, 2));
+// 화살표 함수
+const sum2 = (a, b)=>{
+    return a + b;
+};
+console.log(sum2(10, 5));
 
 },{}]},["cg3xG","7ZSs6"], "7ZSs6", "parcelRequire94c2")
 

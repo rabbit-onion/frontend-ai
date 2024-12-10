@@ -55,3 +55,73 @@ interface User {
 
 const user1: User = { name: "kim", age: 20 };
 const user2: User = { name: "jeong", age: 10 };
+
+// ================================================
+// 객체 타입
+const a: { name: string; age: number } = { name: "kim", age: 20 };
+const b: { name: string; age: number } = { name: "jeong", age: 17 };
+
+// interface 를 사용해 객체의 공통 타입 지정
+interface Ab {
+  name: string;
+  age: number;
+}
+
+const aa: Ab = { name: "kim", age: 20 };
+const bb: Ab = { name: "jeong", age: 17 };
+
+// =========================================================
+// 배열 타입
+const arr1: number[] = [1, 2, 3];
+const arr2: string[] = ["가", "나", "다"];
+const arr3: any[] = [1, "가", true];
+// any : 모든 타입 가능
+
+// =========================================================
+// 객체 배열 타입
+interface User {
+  name: string;
+  age: number;
+}
+
+const user: User[] = [
+  { name: "김가을", age: 2 },
+  { name: "김겨울", age: 3 },
+];
+
+// 객체 내부에 객체가 있을 때
+interface Address {
+  city: string;
+  dong: string;
+}
+
+interface User3 {
+  name: string;
+  age?: number;
+  address: Address;
+}
+// ? 표시된 값은 사용하지 않아도 에러 x,
+// ? 표시 없이 해당 값이 사용되지 않으면 오류 남
+
+const user3: User3 = {
+  name: "코코",
+  // age: 6,
+  address: {
+    city: "Incheon",
+    dong: "Dong-gu",
+  },
+};
+
+// ===========================================================
+// 일반 함수
+function sum(a: number, b: number) {
+  return a + b;
+}
+
+console.log(sum(1, 2));
+
+// 화살표 함수
+const sum2: (a: number, b: number) => number = (a, b) => {
+  return a + b;
+};
+console.log(sum2(10, 5));
