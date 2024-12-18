@@ -1,0 +1,14 @@
+{
+  "name": "05-node2",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "./index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "swiper": "^11.1.15"
+  }
+}
